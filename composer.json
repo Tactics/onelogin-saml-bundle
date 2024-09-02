@@ -1,5 +1,5 @@
 {
-    "name": "nbgrp/onelogin-saml-bundle",
+    "name": "tactics/onelogin-saml-bundle",
     "description": "OneLogin SAML Symfony Bundle",
     "license": "BSD-3-Clause",
     "type": "symfony-bundle",
@@ -13,6 +13,10 @@
         {
             "name": "Alexander Menshchikov",
             "email": "alexander.menshchikov@yandex.ru"
+        },
+        {
+            "name": "Joris Hontelé",
+            "ameil": "joris.hontele@tactics.be"
         }
     ],
     "require": {
