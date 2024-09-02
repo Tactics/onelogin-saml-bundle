@@ -168,6 +168,14 @@ class Configuration implements ConfigurationInterface
                                     ->booleanNode('wantAssertionsSigned')->end()
                                     ->booleanNode('wantNameId')->end()
                                     ->booleanNode('wantNameIdEncrypted')->end()
+                                    ->scalarNode('requestedAuthnContextComparison')
+                                        ->validate()
+                                            ->ifTrue(static fn ($value) => !in_array($value, [
+                                                'exact', 'minimum', 'maximum', 'better'
+                                            ]))
+                                            ->thenInvalid('must be "exact", "minimum", "maximum" or "better".')
+                                        ->end()
+                                    ->end()
                                     ->variableNode('requestedAuthnContext')
                                         ->validate()
                                             ->ifTrue(static fn ($value) => !(\is_bool($value) || \is_array($value)))
